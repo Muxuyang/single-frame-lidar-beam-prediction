@@ -163,7 +163,8 @@ def plot_sample(vec, probs, truth, top1, title, out_path, truth_rank):
     a2.spines[["top", "right"]].set_visible(False)
     fig.suptitle(title, fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.92])
-    fig.savefig(out_path, dpi=150)
+    fig.savefig(out_path, dpi=300)  # 高清 PNG（Word 稿用）
+    fig.savefig(out_path.replace(".png", ".pdf"))  # 矢量 PDF（LaTeX 稿用）
     plt.close(fig)
 
 
